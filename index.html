@@ -11,6 +11,11 @@
     <nav class="navbar">
         <div class="container">
             <div class="logo">Mon Portfolio</div>
+            <button class="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#apropos">À propos</a></li>
@@ -214,5 +219,17 @@
             <p>&copy; 2026 Votre Nom. Tous droits réservés.</p>
         </div>
     </footer>
+        <script>
+            (function(){
+                const btn = document.querySelector('.hamburger');
+                const nav = document.querySelector('.nav-links');
+                if (!btn || !nav) return;
+                btn.addEventListener('click', function(){
+                    const opened = nav.classList.toggle('open');
+                    btn.classList.toggle('open', opened);
+                    btn.setAttribute('aria-expanded', opened);
+                });
+            })();
+        </script>
 </body>
 </html>

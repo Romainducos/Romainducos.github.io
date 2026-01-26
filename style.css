@@ -72,6 +72,40 @@ body {
     color: var(--primary-color);
 }
 
+/* Hamburger button (hidden desktop, shown on small screens) */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    width: 38px;
+    height: 30px;
+    padding: 4px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: var(--text-color);
+    border-radius: 3px;
+    margin: 3px 0;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
 /* Hero Section */
 .hero {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
@@ -419,9 +453,32 @@ section {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .navbar .container {
+        position: relative;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Hide nav links by default on mobile; show when .open */
     .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 20px;
+        background-color: white;
+        box-shadow: var(--shadow);
+        border-radius: 8px;
         flex-direction: column;
+        padding: 1rem;
         gap: 1rem;
+        width: calc(100% - 40px);
+        max-width: 320px;
+    }
+
+    .nav-links.open {
+        display: flex;
     }
 
     .hero-content h1 {
