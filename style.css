@@ -535,11 +535,15 @@ section {
 
 /* Footer */
 .footer {
-    background-color: var(--dark-color);
-    color: white;
+    background-color: #1e293b;
+    color: #f1f5f9;
     text-align: center;
     padding: 2rem 0;
-    transition: background-color 0.3s ease;
+}
+
+[data-theme="dark"] .footer {
+    background-color: #0f172a;
+    color: #e2e8f0;
 }
 
 /* Responsive Design */
