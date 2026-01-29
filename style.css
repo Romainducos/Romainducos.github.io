@@ -37,7 +37,6 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -54,7 +53,7 @@ body {
     top: 0;
     z-index: 1000;
     padding: 1rem 0;
-    transition: background-color 0.3s ease;
+    will-change: background-color;
 }
 
 .navbar .container {
@@ -80,7 +79,6 @@ body {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 500;
-    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -93,7 +91,6 @@ body {
     border: none;
     cursor: pointer;
     padding: 0.5rem;
-    transition: transform 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -237,7 +234,7 @@ section {
 /* About Section */
 .about {
     background-color: var(--bg-color);
-    transition: background-color 0.3s ease;
+    content-visibility: auto;
 }
 
 .about-content {
@@ -281,7 +278,7 @@ section {
     padding: 2rem;
     border-radius: 12px;
     box-shadow: var(--shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.2s ease;
 }
 
 .skill-card:hover {
@@ -330,7 +327,7 @@ section {
 /* Projects Section */
 .projects {
     background-color: var(--bg-color);
-    transition: background-color 0.3s ease;
+    content-visibility: auto;
 }
 
 .projects-grid {
@@ -344,7 +341,7 @@ section {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.2s ease;
 }
 
 .project-card:hover {
@@ -396,21 +393,22 @@ section {
 }
 
 .tag {
-    background-color: [data-theme="dark"] ? #475569 : #e0e7ff;
-    color: var(--primary-color);
+    background-color: #1e40af;
+    color: #ffffff;
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
     font-size: 0.875rem;
     font-weight: 500;
-    transition: background-color 0.3s ease;
 }
 
 [data-theme="dark"] .tag {
-    background-color: #475569;
+    background-color: #3b82f6;
+    color: #0f172a;
 }
 
 [data-theme="light"] .tag {
-    background-color: #e0e7ff;
+    background-color: #1e40af;
+    color: #ffffff;
 }
 
 .project-link {
