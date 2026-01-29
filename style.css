@@ -430,7 +430,7 @@ section {
 }
 
 .project-link {
-    color: #1e3a8a;
+    color: #1e40af;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
@@ -443,15 +443,15 @@ section {
 }
 
 .project-link:hover {
-    color: #1e40af;
+    color: #1e3a8a;
 }
 
 [data-theme="dark"] .project-link {
-    color: #e2e8f0;
+    color: #bfdbfe;
 }
 
 [data-theme="dark"] .project-link:hover {
-    color: #f8fafc;
+    color: #dbeafe;
 }
 
 /* Contact Section */
