@@ -39,6 +39,12 @@ body {
     background-color: var(--bg-color);
 }
 
+@supports (font-display: swap) {
+    body {
+        font-display: swap;
+    }
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -287,6 +293,7 @@ section {
     border-radius: 12px;
     box-shadow: var(--shadow);
     transition: transform 0.2s ease;
+    min-height: 280px;
 }
 
 .skill-card:hover {
@@ -299,16 +306,19 @@ section {
     margin-bottom: 1rem;
     width: 60px;
     height: 60px;
+    min-height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--primary-color);
+    flex-shrink: 0;
 }
 
 .skill-icon svg {
     width: 100%;
     height: 100%;
     stroke: currentColor;
+    aspect-ratio: 1;
 }
 
 .skill-card h3 {
