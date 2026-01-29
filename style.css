@@ -56,6 +56,10 @@ body {
     will-change: background-color;
 }
 
+[data-theme="dark"] .navbar {
+    background-color: #0f172a;
+}
+
 .navbar .container {
     display: flex;
     justify-content: space-between;
@@ -66,6 +70,10 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--primary-color);
+}
+
+[data-theme="dark"] .logo {
+    color: #e2e8f0;
 }
 
 .nav-links {
@@ -412,14 +420,22 @@ section {
 }
 
 .project-link {
-    color: var(--primary-color);
+    color: #1d4ed8;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
 .project-link:hover {
-    color: var(--secondary-color);
+    color: #1e40af;
+}
+
+[data-theme="dark"] .project-link {
+    color: #93c5fd;
+}
+
+[data-theme="dark"] .project-link:hover {
+    color: #bfdbfe;
 }
 
 /* Contact Section */
