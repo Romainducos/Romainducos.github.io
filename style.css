@@ -249,6 +249,7 @@ section {
 .about {
     background-color: var(--bg-color);
     content-visibility: auto;
+    contain-intrinsic-size: 800px;
 }
 
 .about-content {
@@ -346,6 +347,7 @@ section {
 .projects {
     background-color: var(--bg-color);
     content-visibility: auto;
+    contain-intrinsic-size: 900px;
 }
 
 .projects-grid {
@@ -455,6 +457,11 @@ section {
 }
 
 /* Contact Section */
+.contact {
+    content-visibility: auto;
+    contain-intrinsic-size: 700px;
+}
+
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
