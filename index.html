@@ -22,6 +22,7 @@
     
     <title>Portfolio - DUCOS Romain | Développeur Web & IA</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -263,52 +264,5 @@
             <p>&copy; 2026 Ducos Romain Tous droits réservés.</p>
         </div>
     </footer>
-        <script>
-            (function(){
-                const btn = document.querySelector('.hamburger');
-                const nav = document.querySelector('.nav-links');
-                if (!btn || !nav) return;
-                btn.addEventListener('click', function(){
-                    const opened = nav.classList.toggle('open');
-                    btn.classList.toggle('open', opened);
-                    btn.setAttribute('aria-expanded', opened);
-                });
-            })();
-
-            // Theme Toggle
-            (function(){
-                const themeToggle = document.getElementById('themeToggle');
-                const themeIcon = themeToggle.querySelector('.theme-icon');
-                const root = document.documentElement;
-                const savedTheme = localStorage.getItem('theme') || 'light';
-
-                // Set initial theme
-                if (savedTheme === 'dark') {
-                    root.setAttribute('data-theme', 'dark');
-                    updateThemeIcon(true);
-                } else {
-                    root.setAttribute('data-theme', 'light');
-                    updateThemeIcon(false);
-                }
-
-                function updateThemeIcon(isDark) {
-                    // Clear existing content
-                    themeIcon.innerHTML = isDark 
-                        ? '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>'
-                        : '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
-                }
-
-                // Toggle theme
-                themeToggle.addEventListener('click', function(){
-                    const currentTheme = root.getAttribute('data-theme');
-                    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                    
-                    root.setAttribute('data-theme', newTheme);
-                    localStorage.setItem('theme', newTheme);
-                    
-                    updateThemeIcon(newTheme === 'dark');
-                });
-            })();
-        </script>
 </body>
 </html>
