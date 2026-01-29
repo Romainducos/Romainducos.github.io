@@ -1,12 +1,19 @@
-const CACHE_NAME = 'portfolio-v1';
+const CACHE_NAME = 'portfolio-v2';
 const urlsToCache = [
   '/',
   '/index.html',
   '/style.css',
   '/script.js',
-  '/images/photo-cv.jpg',
-  '/images/spot-the-square.png',
-  '/images/logo-wikipi.png'
+  '/images/photo-cv-320.jpg',
+  '/images/photo-cv-480.jpg',
+  '/images/photo-cv-320.webp',
+  '/images/photo-cv-480.webp',
+  '/images/spot-the-square-240.png',
+  '/images/spot-the-square-480.png',
+  '/images/spot-the-square-240.webp',
+  '/images/spot-the-square-480.webp',
+  '/images/logo-wikipi-420.png',
+  '/images/logo-wikipi-840.png'
 ];
 
 // Install service worker and cache resources
