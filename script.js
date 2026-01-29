@@ -1,3 +1,11 @@
+// Register Service Worker for caching
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+            .catch(() => {}); // Silent fail
+    });
+}
+
 // Mobile menu toggle
 (function(){
     const btn = document.querySelector('.hamburger');
