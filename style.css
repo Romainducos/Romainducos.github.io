@@ -420,7 +420,7 @@ section {
 }
 
 .project-link {
-    color: #1d4ed8;
+    color: #1e3a8a;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
@@ -431,11 +431,11 @@ section {
 }
 
 [data-theme="dark"] .project-link {
-    color: #93c5fd;
+    color: #e2e8f0;
 }
 
 [data-theme="dark"] .project-link:hover {
-    color: #bfdbfe;
+    color: #f8fafc;
 }
 
 /* Contact Section */
@@ -509,7 +509,7 @@ section {
     padding: 2rem;
     border-radius: 12px;
     box-shadow: var(--shadow);
-    transition: background-color 0.3s ease;
+    color: var(--text-color);
 }
 
 .form-group {
@@ -527,6 +527,16 @@ section {
     font-family: inherit;
     background-color: var(--bg-color);
     color: var(--text-color);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #475569;
+}
+
+[data-theme="dark"] .form-group input::placeholder,
+[data-theme="dark"] .form-group textarea::placeholder {
+    color: #cbd5e1;
 }
 
 .form-group input:focus,
