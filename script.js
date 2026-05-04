@@ -24,7 +24,7 @@ if ('serviceWorker' in navigator) {
     if (!themeToggle) return;
     
     const root = document.documentElement;
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    const savedTheme = localStorage.getItem('theme') || 'dark';
 
     // Set initial theme immediately
     root.setAttribute('data-theme', savedTheme);
