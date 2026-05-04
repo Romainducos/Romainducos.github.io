@@ -50,3 +50,81 @@ if ('serviceWorker' in navigator) {
         updateIcon();
     });
 })();
+
+// Scroll progress bar
+(function() {
+    const bar = document.getElementById('scrollProgress');
+    if (!bar) return;
+    window.addEventListener('scroll', function() {
+        const total = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = total > 0 ? (window.scrollY / total * 100) + '%' : '0%';
+    }, { passive: true });
+})();
+
+// Back to top
+(function() {
+    const btn = document.getElementById('backToTop');
+    if (!btn) return;
+    window.addEventListener('scroll', function() {
+        btn.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+    btn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+})();
+
+// Scroll reveal
+(function() {
+    const elements = document.querySelectorAll('.fade-in');
+    if (!elements.length || !window.IntersectionObserver) {
+        elements.forEach(function(el) { el.classList.add('visible'); });
+        return;
+    }
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    elements.forEach(function(el) { observer.observe(el); });
+})();
+
+// Active nav link
+(function() {
+    const sections = document.querySelectorAll('section[id]');
+    const links = document.querySelectorAll('.nav-links a[href^="#"]');
+    if (!sections.length || !links.length || !window.IntersectionObserver) return;
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                links.forEach(function(link) {
+                    link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+                });
+            }
+        });
+    }, { threshold: 0.4 });
+    sections.forEach(function(s) { observer.observe(s); });
+})();
+
+// Typing animation for hero subtitle
+(function() {
+    const subtitle = document.querySelector('.subtitle');
+    if (!subtitle) return;
+    const text = subtitle.textContent.trim();
+    subtitle.textContent = '';
+    const cursor = document.createElement('span');
+    cursor.className = 'typing-cursor';
+    subtitle.appendChild(cursor);
+    let i = 0;
+    const next = function() {
+        if (i < text.length) {
+            subtitle.insertBefore(document.createTextNode(text[i++]), cursor);
+            setTimeout(next, 70);
+        } else {
+            setTimeout(function() { cursor.remove(); }, 1500);
+        }
+    };
+    setTimeout(next, 600);
+})();

@@ -21,11 +21,16 @@
     <meta property="twitter:description" content="Portfolio de Romain Ducos, développeur web et IA passionné. Découvrez mes projets et compétences.">
     
     <title>Portfolio - DUCOS Romain | Développeur Web & IA</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="preload" href="style.css" as="style">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
+    <div class="scroll-progress" id="scrollProgress"></div>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -57,6 +62,7 @@
     <section id="accueil" class="hero">
         <div class="container">
             <div class="hero-content">
+                <span class="hero-badge"><span class="status-dot"></span>Disponible</span>
                 <h1>Bonjour, je suis <span class="highlight">DUCOS Romain</span></h1>
                 <p class="subtitle">Développeur Web / IA</p>
                 <p class="description">Je crée des expériences web modernes et performantes</p>
@@ -107,7 +113,7 @@
         <div class="container">
             <h2 class="section-title">Mes Compétences</h2>
             <div class="skills-grid">
-                <div class="skill-card">
+                <div class="skill-card fade-in">
                     <div class="skill-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="60" height="60">
                             <polyline points="22 16 18 12 22 8"></polyline>
@@ -124,7 +130,7 @@
                         <li>React</li>
                     </ul>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card fade-in">
                     <div class="skill-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="60" height="60">
                             <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
@@ -139,7 +145,7 @@
                         <li>Laravel (PHP)</li>
                     </ul>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card fade-in">
                     <div class="skill-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="60" height="60">
                             <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
@@ -152,7 +158,7 @@
                         <li>SQL</li>
                     </ul>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card fade-in">
                     <div class="skill-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="60" height="60">
                             <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 1 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
@@ -174,7 +180,7 @@
         <div class="container">
             <h2 class="section-title">Mes Projets</h2>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card fade-in">
                     <div class="project-image">
                         <picture>
                             <source type="image/webp" srcset="images/spot-the-square-240.webp 240w, images/spot-the-square-480.webp 480w" sizes="(max-width: 768px) 60vw, 236px">
@@ -194,7 +200,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card fade-in">
                     <div class="project-image">
                         <img src="images/logo-wikipi-420.png" alt="logo WikIPI" class="image-placeholder" loading="lazy" decoding="async" width="420" height="171" srcset="images/logo-wikipi-420.png 420w, images/logo-wikipi-840.png 840w, images/logo-wikipi.png 841w" sizes="(max-width: 768px) 80vw, 411px">
                     </div>
@@ -266,6 +272,12 @@
         </div>
     </section>
     </main>
+
+    <button class="back-to-top" id="backToTop" aria-label="Retour en haut">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
 
     <!-- Footer -->
     <footer class="footer">
